@@ -1,0 +1,164 @@
+.navbar-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-background);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+/* Desktop navigation */
+.desktop-nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.desktop-nav a {
+  font-size: 20px;
+  color: var(--color-primary);
+  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a:focus {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.desktop-nav a:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-accent);
+  outline: none;
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a:focus::after {
+  width: 100%;
+  outline: none;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  justify-content: space-between;
+}
+
+/* Hamburger lines */
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Rotate 1st hamburger line 45 degrees down */
+.hamburger-active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+/* Get rid of 2nd hamburger line */
+.hamburger-active span:nth-child(2) {
+  opacity: 0;
+}
+
+/* Rotate 3rd hamburger line 45 degrees up */
+.hamburger-active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile navigation */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--color-background);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  min-width: 200px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-nav-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-accent);
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .navbar {
+    padding: 1rem 15px;
+  }
+}

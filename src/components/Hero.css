@@ -1,0 +1,35 @@
+.hero-container {
+  display: inline-block;
+  margin: 5vh 0 10vh 0;
+  font-size: clamp(50px, 8vw, 100px);
+}
+
+.hero-intro-text {
+  font-weight: 300;
+}
+.my-name-container {
+  display: inline-block;
+}
+
+#my-name {
+  font-weight: bolder;
+  color: var(--color-accent);
+  position: relative;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(9), cursor 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
