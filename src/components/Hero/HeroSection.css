@@ -1,7 +1,8 @@
-.hero-container {
+#hero-container {
   display: inline-block;
-  margin: 5vh 0 10vh 0;
-  font-size: clamp(50px, 8vw, 100px);
+  padding: 20vh 0 10vh 0;
+  font-size: clamp(50px, 8vw, 85px);
+  min-height: 100vh;
 }
 
 .hero-intro-text {

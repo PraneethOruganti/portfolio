@@ -1,0 +1,8 @@
+#about-section {
+  min-height: min-content;
+}
+
+.about-header {
+  display: inline-block;
+  margin: 0 auto;
+}

@@ -1,0 +1,10 @@
+.project-card {
+  background-color: #ffffff;
+  border: 2px solid black;
+  height: min-content;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+}

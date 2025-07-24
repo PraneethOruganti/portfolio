@@ -1,0 +1,16 @@
+.slide-in-section {
+  opacity: 0;
+  transform: translateX(-25%);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-section.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion) {
+  .slide-in-section {
+    transition: none;
+  }
+}
