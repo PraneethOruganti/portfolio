@@ -14,10 +14,6 @@ function Navbar({ sectionRefs }: NavbarProps) {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
   const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({
@@ -30,9 +26,7 @@ function Navbar({ sectionRefs }: NavbarProps) {
   const links = ['Home', 'About', 'Projects', 'Blog', 'Contact'];
 
   return (
-    <div className="navbar-container">
-      {/* TODO: implement exiting hamburger menu after clicking outside of bounds    */}
-      {/* <label id="overlay" htmlFor="navbar"></label> */}
+    <header className="navbar-container">
       <nav className="navbar">
         {/* Desktop navigation */}
         <div className="desktop-nav">
@@ -51,6 +45,8 @@ function Navbar({ sectionRefs }: NavbarProps) {
           })}
         </div>
 
+        {/* TODO: implement exiting hamburger menu after clicking outside of bounds    */}
+
         {/* Mobile hamburger button */}
         <button
           className={`hamburger ${isMenuOpen ? 'hamburger-active' : ''}`}
@@ -66,14 +62,21 @@ function Navbar({ sectionRefs }: NavbarProps) {
         <div className={`mobile-nav ${isMenuOpen ? 'mobile-nav-open' : ''}`}>
           {links.map((item) => {
             return (
-              <a href="" onClick={closeMenu}>
+              <a
+                href=""
+                onClick={(event) => {
+                  event.preventDefault();
+                  scrollToSection(sectionRefs[item.toLowerCase()]);
+                  toggleMenu();
+                }}
+              >
                 {item}
               </a>
             );
           })}
         </div>
       </nav>
-    </div>
+    </header>
   );
 }
 

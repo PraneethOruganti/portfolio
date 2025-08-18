@@ -1,0 +1,31 @@
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  background-color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card:hover .contact-card_label {
+  color: var(--color-accent);
+  transition: color 0.5s ease-out;
+}
+
+.contact-card_label {
+  margin-top: 12px;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}

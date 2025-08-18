@@ -4,7 +4,7 @@ import HeroSection from './components/Hero/HeroSection';
 import ProjectsSection from './components/Projects/ProjectsSection';
 import ContactSection from './components/Contact/ContactSection';
 import BlogSection from './components/Blog/BlogSection';
-import AboutSection from './components/About/About';
+import AboutSection from './components/About/AboutSection';
 import { useRef } from 'react';
 
 function App() {
@@ -26,11 +26,11 @@ function App() {
     <>
       <Navbar sectionRefs={sectionRefs}></Navbar>
       <main className="main-container">
-        <HeroSection ref={sectionRefs.home}></HeroSection>
-        <AboutSection ref={sectionRefs.about}></AboutSection>
-        <ProjectsSection ref={sectionRefs.projects}></ProjectsSection>
-        <BlogSection ref={sectionRefs.blog}></BlogSection>
-        <ContactSection ref={sectionRefs.contact}></ContactSection>
+        <HeroSection ref={heroSectionRef}></HeroSection>
+        <AboutSection ref={aboutSectionRef}></AboutSection>
+        <ProjectsSection ref={projectsSectionRef}></ProjectsSection>
+        <BlogSection ref={blogSectionRef}></BlogSection>
+        <ContactSection ref={contactSectionRef}></ContactSection>
       </main>
     </>
   );

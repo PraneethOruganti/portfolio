@@ -10,7 +10,7 @@ function BlogSection({ ref }: BlogSectionProps) {
     <SlideInSection>
       <section ref={ref} id="blog-section">
         <h1>Blog Posts</h1>
-        <p>Bunch of blog posts right here as well</p>
+        <p>Coming soon...</p>
       </section>
     </SlideInSection>
   );
