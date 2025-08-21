@@ -19,6 +19,12 @@ function AboutSection({ ref }: AboutSectionProps) {
           </li>
           <li>
             <h4>
+              I'm passionate about systems, machine learning, and mathematics and am actively
+              pursuing experiences in these areas.
+            </h4>
+          </li>
+          <li>
+            <h4>
               In my free time, I like to watch Formula One, play video games, or play basketball. 🏎️
               🎮 🏀
             </h4>
