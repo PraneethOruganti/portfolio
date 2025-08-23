@@ -1,20 +1,21 @@
 import './ProjectCard.css';
 
-export interface ProjectCardProps {
+export type ProjectCardProps = {
   title: string;
   description: string;
   image: string;
   tags: string[];
   link?: string;
-}
+  githubLink?: string;
+};
 
-function ProjectCard({ title, description, image, tags, link }: ProjectCardProps) {
+function ProjectCard({ title, description, image, tags, link, githubLink }: ProjectCardProps) {
   return (
     <div className="project-card group">
       <div className="image-container">
         <img className="project-image" src={image} alt={title} loading="lazy" />
         <div className="overlay">
-          <button className="view-btn">
+          <a href={link} className="view-btn">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -24,7 +25,7 @@ function ProjectCard({ title, description, image, tags, link }: ProjectCardProps
               />
             </svg>
             View Project
-          </button>
+          </a>
         </div>
       </div>
 
@@ -43,17 +44,19 @@ function ProjectCard({ title, description, image, tags, link }: ProjectCardProps
         <p className="project-description">{description}</p>
 
         <div className="project-footer">
-          <a href={link} className="learn-more">
-            Learn More
-            <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </a>
+          {githubLink !== undefined && (
+            <a className="github-link" href={githubLink}>
+              See it on GitHub
+              <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          )}
         </div>
       </div>
     </div>

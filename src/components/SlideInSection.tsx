@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import './SlideInSection.css';
 
-interface SlideInSectionProps {
+type SlideInSectionProps = {
   children: ReactNode;
-}
+};
 
 function SlideInSection({ children }: SlideInSectionProps) {
   const ref = useRef<HTMLDivElement>(null);

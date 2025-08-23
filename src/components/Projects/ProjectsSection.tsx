@@ -2,9 +2,9 @@ import SlideInSection from '../SlideInSection';
 import ProjectCard, { type ProjectCardProps } from './ProjectCard';
 import portfolioUrl from '../../images/portfolio.png';
 
-interface ProjectsSectionProps {
+type ProjectsSectionProps = {
   ref: React.RefObject<HTMLElement | null>;
-}
+};
 
 function ProjectsSection({ ref }: ProjectsSectionProps) {
   const projects: ProjectCardProps[] = [
@@ -14,6 +14,8 @@ function ProjectsSection({ ref }: ProjectsSectionProps) {
         'Responsive personal portfolio website built with React. I am currently working on implementing a headless CMS in order to easily auto-generate blog and project components without having to redeploy the website every time. Stay tuned...',
       image: portfolioUrl,
       tags: ['React', 'TypeScript', 'CSS', 'HTML'],
+      link: '/',
+      githubLink: 'https://github.com/PraneethOruganti/portfolio',
     },
   ];
 
@@ -21,13 +23,16 @@ function ProjectsSection({ ref }: ProjectsSectionProps) {
     <SlideInSection>
       <section ref={ref} id="projects-section">
         <h1>Projects</h1>
-        {projects.map((project) => {
+        {projects.map((project, index) => {
           return (
             <ProjectCard
+              key={index}
               title={project.title}
               description={project.description}
               image={project.image}
               tags={project.tags}
+              link={project.link}
+              githubLink={project.githubLink}
             />
           );
         })}

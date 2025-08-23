@@ -1,8 +1,8 @@
 import './HeroSection.css';
 
-interface HeroSectionProps {
+type HeroSectionProps = {
   ref: React.RefObject<HTMLElement | null>;
-}
+};
 function HeroSection({ ref }: HeroSectionProps) {
   return (
     <section ref={ref}>

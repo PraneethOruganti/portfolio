@@ -5,9 +5,9 @@ import emailLogoUrl from '../../images/email.svg';
 import githubLogoUrl from '../../images/github.svg';
 import linkedinLogoUrl from '../../images/linkedin.svg';
 
-interface ContactSectionProps {
+type ContactSectionProps = {
   ref: React.RefObject<HTMLElement | null>;
-}
+};
 
 function ContactSection({ ref }: ContactSectionProps) {
   const contacts: ContactCardProps[] = [
@@ -19,12 +19,12 @@ function ContactSection({ ref }: ContactSectionProps) {
     {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/sp-oruganti/',
-      imagePath: githubLogoUrl,
+      imagePath: linkedinLogoUrl,
     },
     {
       name: 'GitHub',
       link: 'https://github.com/PraneethOruganti',
-      imagePath: linkedinLogoUrl,
+      imagePath: githubLogoUrl,
     },
   ];
 
@@ -33,9 +33,10 @@ function ContactSection({ ref }: ContactSectionProps) {
       <section ref={ref} id="contact-section">
         <h1>Contact Me!</h1>
         <div className="contact-cards-container">
-          {contacts.map((contact) => {
+          {contacts.map((contact, index) => {
             return (
               <ContactCard
+                key={index}
                 name={contact.name}
                 link={contact.link}
                 imagePath={contact.imagePath}

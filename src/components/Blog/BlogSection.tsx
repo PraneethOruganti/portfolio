@@ -1,9 +1,9 @@
 import SlideInSection from '../SlideInSection';
 import './BlogSection.css';
 
-interface BlogSectionProps {
+type BlogSectionProps = {
   ref: React.RefObject<HTMLElement | null>;
-}
+};
 
 function BlogSection({ ref }: BlogSectionProps) {
   return (

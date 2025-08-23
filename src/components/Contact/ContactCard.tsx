@@ -1,10 +1,10 @@
 import './ContactCard.css';
 
-export interface ContactCardProps {
+export type ContactCardProps = {
   name: string;
   link: string;
   imagePath: string;
-}
+};
 
 export default function ContactCard({ name, link, imagePath }: ContactCardProps) {
   return (

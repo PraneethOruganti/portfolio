@@ -1,9 +1,9 @@
 import './AboutSection.css';
 import SlideInSection from '../SlideInSection';
 
-interface AboutSectionProps {
+type AboutSectionProps = {
   ref: React.RefObject<HTMLElement | null>;
-}
+};
 
 function AboutSection({ ref }: AboutSectionProps) {
   return (
